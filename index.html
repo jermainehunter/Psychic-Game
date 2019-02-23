@@ -12,10 +12,10 @@
 <body>
     <h1>The Psychic Game</h1>
     <p>Guess what letter I'm thinking of:</p>
-    <p>Wins: <span id="wins-text"></span></p>
-    <p>Losses: <span id="losses-text"></span></p>
-    <p>Guesses Left: <span id="guessesleft-text"></span></p>
-    <p>Your Guesses so far: <span id="guessesmade-text"></span></p>
+    <p><span id="wins-text"></span></p>
+    <p><span id="losses-text"></span></p>
+    <p><span id="guessesleft-text"></span></p>
+    <p><span id="guessesmade-text"></span></p>
     <p><span id="result-text"></span></p>
 
 
@@ -32,6 +32,7 @@
         var losses = 0;
         var guessesLeft = 9;
         var newGame = false;
+       
 
         // Create variables that hold references to write text into my HTML and display it in the correct place
 
@@ -48,6 +49,9 @@
             //Determines which key was pressed
             var userGuess = event.key;
             console.log(userGuess);
+            document.getElementById("guessesmade-text").innerHTML = "Guesses Made : " + userGuess;
+
+            
 
 
 
@@ -58,16 +62,24 @@
                 alert("You've Done It!");
                 wins++;
             }
+            //below the guesses left decreases by 1 with every user key stroke and the guesses left alerts
             else { 
                 guessesLeft--;
-                alert(guessesLeft);
+                console.log(guessesLeft);
+
                 // ton of stuff, update guesses left, update the guesses so far, update loss column, set new game flag to true if last guess used
                 //if statement, are you out of guesses
             }
 
-            //Display the user and computer guesses, and wins, losses, guesses left and guesses so far
-            document.getElementById("wins-text").innerHTML = "Wins :";
+            if (guessesLeft === 0)
+            {
+                alert("You're a looser Baby!")
+                guessesLeft === 9;
+            }
 
+            //Display the user and computer guesses, and wins, losses, guesses left and guesses so far
+         
+            
 
 
             //Play again if the user guesses incorrectly
@@ -75,8 +87,12 @@
             //Stop if the player guesses the letter correctly
 
         }
+        //I have to have this out of the .onkeyup method so it will show before I press a key
+        document.getElementById("wins-text").innerHTML = "Wins : " + wins;
+        document.getElementById("losses-text").innerHTML = "Losses : " + losses;
+        document.getElementById("guessesleft-text").innerHTML = "Guesses Left : " + guessesLeft;
 
-
+        
     </script>
 </body>
 
