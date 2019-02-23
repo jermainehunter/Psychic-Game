@@ -37,9 +37,11 @@
 
 
         //Randomly chooses a choice from my options array that will be the computer's guess number.
+        //The computer now generates a random letter of the alphabet and I was able to get that letter
+        //to log to the console, good job dude!
         var randomNum = Math.floor(Math.random() * computerChoices.length);
         var computerGuess = computerChoices[randomNum];
-      console.log(computerGuess);        
+        console.log(computerGuess);        
         //This function is run whenever the user presses a key - the main curly bracket tied to onkeyup
         document.onkeyup = function (event) {
 
