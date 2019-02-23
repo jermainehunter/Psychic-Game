@@ -37,8 +37,9 @@
 
 
         //Randomly chooses a choice from my options array that will be the computer's guess number.
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        
+        var randomNum = Math.floor(Math.random() * computerChoices.length);
+        var computerGuess = computerChoices[randomNum];
+      console.log(computerGuess);        
         //This function is run whenever the user presses a key - the main curly bracket tied to onkeyup
         document.onkeyup = function (event) {
 
