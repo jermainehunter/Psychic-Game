@@ -41,7 +41,7 @@
         //to log to the console, good job dude!
         var randomNum = Math.floor(Math.random() * computerChoices.length);
         var computerGuess = computerChoices[randomNum];
-        console.log(computerGuess);        
+        console.log(computerGuess);
         //This function is run whenever the user presses a key - the main curly bracket tied to onkeyup
         document.onkeyup = function (event) {
 
@@ -56,13 +56,19 @@
             if (userGuess === computerGuess) {
                 //update wins counter, set new game flag to true, put text into spans for results and wins, 
                 alert("You've Done It!");
-            } else{
+                wins++;
+            }
+            else { 
+                guessesLeft--;
+                alert(guessesLeft);
                 // ton of stuff, update guesses left, update the guesses so far, update loss column, set new game flag to true if last guess used
                 //if statement, are you out of guesses
             }
 
             //Display the user and computer guesses, and wins, losses, guesses left and guesses so far
-            document.getElementById("guessesmade-text").innerHTML = "";
+            document.getElementById("wins-text").innerHTML = "Wins :";
+
+
 
             //Play again if the user guesses incorrectly
 
