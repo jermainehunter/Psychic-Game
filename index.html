@@ -49,7 +49,7 @@
             //Determines which key was pressed
             var userGuess = event.key;
             console.log(userGuess);
-            document.getElementById("guessesmade-text").innerHTML = "Guesses Made : " + userGuess;
+            document.getElementById("guessesmade-text").innerHTML = "Your Guesses so far : " + userGuess;
 
             
 
@@ -66,6 +66,7 @@
             else { 
                 guessesLeft--;
                 console.log(guessesLeft);
+                alert("Guesses Left: " + guessesLeft);
 
                 // ton of stuff, update guesses left, update the guesses so far, update loss column, set new game flag to true if last guess used
                 //if statement, are you out of guesses
